@@ -26,9 +26,9 @@ namespace sdds {
     public:
         MotorVehicle(const char* licenseNo, int yearBuilt);
         void moveTo(const char* address);
-        virtual std::ostream& write(std::ostream& os);      //virtual therefore latest method will be called
+        virtual std::ostream& write(std::ostream& os) const;      //virtual therefore latest method will be called
         virtual std::istream& read(std::istream& is);       //virtual therefore latest method will be called
-        friend std::ostream& operator<<(std::ostream& os, MotorVehicle other);
+        friend std::ostream& operator<<(std::ostream& os, const MotorVehicle& other);
         friend std::istream& operator>>(std::istream& is, MotorVehicle& other);
     };
 

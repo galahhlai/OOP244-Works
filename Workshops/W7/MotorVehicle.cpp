@@ -40,7 +40,7 @@ namespace sdds {
         }
     }
 
-    std::ostream& MotorVehicle::write(std::ostream& os) {
+    std::ostream& MotorVehicle::write(std::ostream& os) const {
         os << "| " << m_yearBuilt << " | " << m_licenseNo << " | " << m_address;
         return os;
     }
@@ -56,7 +56,7 @@ namespace sdds {
         return is;
     }
 
-    std::ostream& operator<<(std::ostream& os, MotorVehicle other) {
+    std::ostream& operator<<(std::ostream& os, const MotorVehicle& other) {
         return other.MotorVehicle::write(os);
     }
 

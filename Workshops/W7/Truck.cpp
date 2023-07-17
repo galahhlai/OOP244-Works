@@ -41,7 +41,7 @@ namespace sdds {
         return false;
     }
 
-    std::ostream& Truck::write(std::ostream& os) {
+    std::ostream& Truck::write(std::ostream& os) const{
         MotorVehicle::write(os);
         os << " | " << m_currentLoad << "/" << m_loadCapacity;
         return os;
@@ -56,7 +56,7 @@ namespace sdds {
         return is;
     }
 
-    std::ostream& operator<<(std::ostream& os, Truck& other) {
+    std::ostream& operator<<(std::ostream& os, const Truck& other) {
         return other.Truck::write(os);
     }
 
