@@ -14,6 +14,7 @@
 // Name               Date                 Reason
 //
 /////////////////////////////////////////////////////////////////
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
 #include "Menu.h"
@@ -132,9 +133,7 @@ namespace sdds {
     }
 
     ostream& operator<<(ostream& os, const Menu& menu) {
-        if(menu.m_title != nullptr) {
-            menu.displayTitle();
-        }
+        menu.displayTitle();
         return os;
     }
 

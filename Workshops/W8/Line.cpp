@@ -17,7 +17,8 @@
 namespace sdds {
     Line::Line(): LblShape(), m_length(0) {}
 
-    Line::Line(const char* label, unsigned length): LblShape(label), m_length(length) {}
+    Line::Line(const char* label, unsigned length):
+       LblShape(label), m_length(length) {}
 
     Line::~Line() = default;
 

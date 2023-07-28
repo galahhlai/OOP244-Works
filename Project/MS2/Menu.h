@@ -25,8 +25,7 @@ namespace sdds {
     class Menu; // forward declaration
 
     class MenuItem {
-        friend class Menu;
-        char* m_content = nullptr;
+        char* m_content{};
 
         MenuItem(const char* content);
         MenuItem(const MenuItem&) = delete; //no copy constructor allowed
@@ -35,12 +34,13 @@ namespace sdds {
         operator bool() const;
         operator const char*() const;
         void display() const;
+        friend class Menu;
     };
 
     class Menu {
-        MenuItem* m_title = nullptr;
-        MenuItem* m_items[MAX_MENU_ITEMS] {nullptr};
-        int m_noOfItems;
+        MenuItem* m_title{};
+        MenuItem* m_items[MAX_MENU_ITEMS] {};
+        int m_noOfItems{};
 
     public:
         Menu();
@@ -59,7 +59,6 @@ namespace sdds {
         operator int() const;
         operator unsigned() const;
         operator bool() const;
-        friend std::ostream& operator<<(std::ostream&, const Menu&);
         const char* operator[](int) const;
     };
 }
